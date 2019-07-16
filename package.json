@@ -57,7 +57,7 @@
     "dependencies": {
         "react": "^16.8.2",
         "react-dom": "^16.8.2",
-        "react-miniui": "^1.1.1",
+        "react-miniui": "^1.2.0",
         "react-router-dom": "^5.0.0"
     }
 }

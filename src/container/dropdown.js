@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
-import {Row, Col, Icon, Button, Dropdown, Menu, Item, Select, Option, Badge} from 'react-miniui';
-
+import {Row, Col, Icon, Button, Dropdown, Menu, Item, Select, Option, Badge} from '../../../react-miniui/dist/index.js';
 //Dropdown.Toggler, Dropdown.Menu,  Dropdown.Item
 
 export default class DropdownPage extends Component {
@@ -97,7 +96,7 @@ export default class DropdownPage extends Component {
 							<Option value="iphone">iphone</Option>
 							<Option value="ipad">ipad</Option>
 							<Option value="Macbook Pro">Macbook Pro</Option>
-							<Option value="windows phone">windows phone</Option>
+							<Option value="windows phone">windows phone<span>55</span></Option>
 						</Select>
 					</Col>
 				</Row>

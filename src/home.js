@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {render} from 'react-dom';
+import ReactDOM, {render} from 'react-dom';
 import {BrowserRouter, Switch, Route, Link} from 'react-router-dom';
 
 import './scss/page.scss';
@@ -11,15 +11,7 @@ import IconPage from './container/icon.js';
 import TextPage from './container/text.js';
 import BadgePage from './container/badge.js';
 import DropdownPage from './container/dropdown.js';
-
-class Home extends Component {
-  render() {
-    return(
-      <div>
-      </div>
-    )
-  }
-}
+import OverlayPage from './container/overlay.js';
 
 class Header extends Component {
   render() {
@@ -40,28 +32,6 @@ class SlideBar extends Component {
     this.state = {
       fixed: false
     }
-    this.handleScroll = this.handleScroll.bind(this);
-  }
-
-  handleScroll() {
-    let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-    if (scrollTop > 74) {
-      this.setState({
-        fixed: true
-      });
-    } else {
-      this.setState({
-        fixed: false
-      });
-    }
-  }
-
-  componentWillMount() {
-    document.addEventListener('scroll', this.handleScroll, false);
-  }
-
-  componentWillUnmount() {
-    document.removeEventListener('scroll', this.handleScroll);
   }
 
   render() {
@@ -89,7 +59,7 @@ class SlideBar extends Component {
           <li>
             <ul>
               <li><Link to="/dropdown"><span>Dropdown</span><span className="comment">下载菜单</span></Link></li>
-              <li><Link to="/"><span>Overlay</span><span className="comment">弹出浮层</span></Link></li>
+              <li><Link to="/overlay"><span>Overlay</span><span className="comment">弹出浮层</span></Link></li>
               <li><Link to="/"><span>Modal</span><span className="comment">弹出窗口</span></Link></li>
             </ul>
           </li>
@@ -99,19 +69,38 @@ class SlideBar extends Component {
   }
 }
 
+class Home extends Component {
+  constructor(){
+    super();
+    this.mref = React.createRef();
+  }
+  componentDidMount() {
+    console.log("this.mref", this.mref.current);
+  }
+  render() {
+    return (
+      <div ref={this.mref}>
+        Home
+      </div>
+    )
+  }
+}
+
+
 class Main extends Component {
   render() {
     return(
       <div className="miniui-body">
         <Switch>
-          <Route exact path='/' component={Home}/>
+          <Route exact path='/' component={TextPage}/>
+          <Route path='/text' component={TextPage}/>
           <Route path='/button' component={ButtonPage}/>
           <Route path='/input' component={FormPage}/>
           <Route path='/column' component={ColumnPage}/>
           <Route path='/icon' component={IconPage}/>
-          <Route path='/text' component={TextPage}/>
           <Route path='/badge' component={BadgePage}/>
           <Route path='/dropdown' component={DropdownPage}/>
+          <Route path='/overlay' component={OverlayPage}/>
         </Switch>
       </div>
     )

@@ -42,7 +42,7 @@ export default class ButtonPage extends Component {
         <h2>addonBefore && addonAfter</h2>
         <Row>
           <Col span="6"><Input block="true" addonBefore={<i className="icon-magnifier"></i>} type="text" color="green" placeholder="input text" /></Col>
-          <Col span="6"><Input block="true" addonAfter={<i className="icon-plus"></i>} type="text" color="red" placeholder="input text" /></Col>
+          <Col span="6"><Input block="true" addonAfter={<Icon icon="icon-plus" />} type="text" color="red" placeholder="input text" /></Col>
         </Row>
         <h2>Size</h2>
         <Row>
