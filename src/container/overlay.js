@@ -4,9 +4,6 @@ import { Row, Col, OverlayTrigger, Popovers, Tooltip,  Button} from 'react-miniu
 
 export default class OverlayPage extends Component {
   render() {
-
-    console.log("Overlay", OverlayTrigger);
-
     return(
       <div>
         <h1>Overlay</h1>

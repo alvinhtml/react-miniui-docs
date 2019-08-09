@@ -1,6 +1,8 @@
-import React, {Component} from 'react';
+import React, {Component, useState, useEffect} from 'react';
 import ReactDOM, {render} from 'react-dom';
 import {BrowserRouter, Switch, Route, Link} from 'react-router-dom';
+
+import {ActiveModal} from 'react-miniui';
 
 import './scss/page.scss';
 
@@ -12,6 +14,7 @@ import TextPage from './container/text.js';
 import BadgePage from './container/badge.js';
 import DropdownPage from './container/dropdown.js';
 import OverlayPage from './container/overlay.js';
+import ModalPage from './container/modal.js';
 
 class Header extends Component {
   render() {
@@ -25,6 +28,7 @@ class Header extends Component {
     )
   }
 }
+
 
 class SlideBar extends Component {
   constructor(props) {
@@ -60,7 +64,7 @@ class SlideBar extends Component {
             <ul>
               <li><Link to="/dropdown"><span>Dropdown</span><span className="comment">下载菜单</span></Link></li>
               <li><Link to="/overlay"><span>Overlay</span><span className="comment">弹出浮层</span></Link></li>
-              <li><Link to="/"><span>Modal</span><span className="comment">弹出窗口</span></Link></li>
+              <li><Link to="/modal"><span>Modal</span><span className="comment">弹出窗口</span></Link></li>
             </ul>
           </li>
         </ul>
@@ -75,12 +79,12 @@ class Home extends Component {
     this.mref = React.createRef();
   }
   componentDidMount() {
-    console.log("this.mref", this.mref.current);
+    // console.log("this.mref", this.mref.current);
   }
   render() {
     return (
-      <div ref={this.mref}>
-        Home
+      <div>
+        home
       </div>
     )
   }
@@ -101,6 +105,7 @@ class Main extends Component {
           <Route path='/badge' component={BadgePage}/>
           <Route path='/dropdown' component={DropdownPage}/>
           <Route path='/overlay' component={OverlayPage}/>
+          <Route path='/modal' component={ModalPage}/>
         </Switch>
       </div>
     )
@@ -127,6 +132,7 @@ render(
     <div className="flex flex-direction-column">
       <Header />
       <App />
+      <div><ActiveModal /></div>
     </div>
   </BrowserRouter>,
 document.getElementById('webApplication'))

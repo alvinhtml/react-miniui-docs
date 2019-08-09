@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
-import {Row, Col, Icon, Button, Dropdown, Menu, Item, Select, Option, Badge} from '../../../react-miniui/dist/index.js';
-//Dropdown.Toggler, Dropdown.Menu,  Dropdown.Item
+import {Row, Col, Icon, Button, Dropdown, Menu, Item, Select, Option, Badge} from 'react-miniui';
 
 export default class DropdownPage extends Component {
 
 	handleChange(val, text) {
-		console.log("val", val, text);
+		console.log("val:", val);
+		console.log("text:", text);
 	}
 
 	render() {
@@ -92,7 +92,7 @@ export default class DropdownPage extends Component {
 					</Col>
 
 					<Col span="2">
-						<Select name="phone" value="iphone" search={true} onChange={this.handleChange.bind(this)}>
+						<Select name="phone" value="Macbook Pro" search={true} onChange={this.handleChange.bind(this)}>
 							<Option value="iphone">iphone</Option>
 							<Option value="ipad">ipad</Option>
 							<Option value="Macbook Pro">Macbook Pro</Option>
