@@ -25,7 +25,6 @@ jobs:
       - run: npm install
       # - run: npm run lint
       - run: npm run build
-      - run: npm run manual:build
 
       - save_cache:
           paths:
