@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import shlStyle from '../highlighter.config.js';
 
 import {
   Row,
@@ -103,10 +105,44 @@ export default class ModalPage extends Component {
     return(
       <div>
         <h1>Modal</h1>
+          <SyntaxHighlighter {...shlStyle}>{`import {
+  Button,
+  Modal,
+  Alert,
+  Confirm,
+  showModal,
+  closeModal
+} from 'react-miniui';`}
+          </SyntaxHighlighter>
         <h3>Modal position</h3>
         <Row>
           <Button color="red" onClick={() => showModal(<ModalExample />)}>Show Modal</Button>
         </Row>
+        <SyntaxHighlighter {...shlStyle}>{`class ModalExample extends Component {
+  render() {
+    return (
+      <Modal>
+        <Modal.Title>提示信息</Modal.Title>
+        <Modal.Content>
+          你将余生写一首长诗，却不能提及一个与她有关的字
+        </Modal.Content>
+        <Modal.Actions>
+          <Button color="green">确定</Button>
+          <Button onClick={() => closeModal()}>取消</Button>
+        </Modal.Actions>
+      </Modal>
+    );
+  }
+}
+
+class ShowModal extends Component {
+  render() {
+    return (
+      <Button color="red" onClick={() => showModal(<ModalExample />)}>Show Modal</Button>
+    );
+  }
+}`}
+        </SyntaxHighlighter>
         <h3>Modal Size</h3>
         <Row>
           <Button color="teal" onClick={() => showModal(<ModalExampleBig />)}>Show Big Modal</Button>
@@ -116,6 +152,30 @@ export default class ModalPage extends Component {
           <Button color="blue" onClick={this.alertModal.bind(this)}>Alert Modal</Button>
           <Button color="red" onClick={this.confirmModal.bind(this)}>Confirm Modal</Button>
         </Row>
+        <SyntaxHighlighter {...shlStyle}>{`class ShowModal extends Component {
+  alertModal() {
+    Alert('弹出一个消息对话框!')
+  }
+
+  confirmModal() {
+    Confirm(
+      '您确定要执行删除操作吗？',
+      () => {
+        console.log('confirm callback!');
+      },
+      <Button color="red">删除</Button>
+    )
+  }
+  render() {
+    return (
+      <Row>
+        <Button color="blue" onClick={this.alertModal.bind(this)}>Alert Modal</Button>
+        <Button color="red" onClick={this.confirmModal.bind(this)}>Confirm Modal</Button>
+      </Row>
+    );
+  }
+}`}
+        </SyntaxHighlighter>
       </div>
     )
   }

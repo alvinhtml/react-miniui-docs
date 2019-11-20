@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-
 import { Badge, Button } from 'react-miniui';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import shlStyle from '../highlighter.config.js';
 
 export default class BadgePage extends Component {
   render() {
@@ -14,6 +15,10 @@ export default class BadgePage extends Component {
         <h4>标题 H4.h4 1.2857em 18px <Badge color="red" >New</Badge></h4>
         <h5>标题 H5.h5 1.0000em 14px <Badge color="red" >New</Badge></h5>
         <h6>标题 H6.h6 0.8571em 12px <Badge color="red" >New</Badge></h6>
+        <SyntaxHighlighter {...shlStyle}>{`import { Badge, Button } from 'react-miniui';
+          
+<Badge color="red" >New</Badge>`}
+        </SyntaxHighlighter>
         <h2 className="section-head">with Button</h2>
         <div className="row spaced">
           <Button color="red">
@@ -23,6 +28,12 @@ export default class BadgePage extends Component {
             Profile <Badge color="red">17</Badge>
           </Button>
         </div>
+        <SyntaxHighlighter {...shlStyle}>{`import { Badge, Button } from 'react-miniui';
+
+<Button color="blue">
+  Profile <Badge color="red">17</Badge>
+</Button>`}
+        </SyntaxHighlighter>
       </div>
     )
   }

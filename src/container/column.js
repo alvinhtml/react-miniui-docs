@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-
 import { Row, Flex, Col } from 'react-miniui';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import shlStyle from '../highlighter.config.js';
 
 export default class columnPage extends Component {
   render() {
@@ -8,6 +9,8 @@ export default class columnPage extends Component {
     return(
       <div>
         <h1 className="section-head">栅格布局</h1>
+        <SyntaxHighlighter {...shlStyle}>{`import { Row, Col } from 'react-miniui';`}
+        </SyntaxHighlighter>
         <h2>栅格化布局12格分</h2>
         <Row className="demo-row align-center color-white">
           <Col span="1" className="bg-blue">span1</Col>
@@ -43,6 +46,20 @@ export default class columnPage extends Component {
           <Col span="4" className="bg-blue">col-span4</Col>
           <Col span="4" className="bg-blue">col-span4</Col>
         </Row>
+      <SyntaxHighlighter {...shlStyle}>{`<Row>
+  <Col span="4" className="bg-blue">col-span4</Col>
+  <Col span="8" className="bg-blue">col-span8</Col>
+</Row>
+<Row>
+  <Col span="2" className="bg-blue">col-span2</Col>
+  <Col span="6" offset="4" className="bg-blue">col-span6 offset-span4</Col>
+</Row>
+<Row>
+  <Col span="4" className="bg-blue">col-span4</Col>
+  <Col span="4" className="bg-blue">col-span4</Col>
+  <Col span="4" className="bg-blue">col-span4</Col>
+</Row>`}
+        </SyntaxHighlighter>
         <h2>栅格化布局24格分</h2>
         <Row className="demo-row align-center color-white">
           <Col grid="1" className="bg-blue">1</Col>
@@ -99,6 +116,11 @@ export default class columnPage extends Component {
           <Col grid="10" className="bg-blue">col-grid10</Col>
           <Col grid="14" className="bg-blue">col-grid14</Col>
         </Row>
+        <SyntaxHighlighter {...shlStyle}>{`<Row className="demo-row align-center color-white">
+  <Col grid="8" className="bg-blue">col-grid10</Col>
+  <Col grid="8" offset="8" className="bg-blue">col-grid8 offset-grid8</Col>
+</Row>`}
+          </SyntaxHighlighter>
         <h2>弹性栅格化布局</h2>
         <Row className="demo-row align-center color-white flex">
           <Col flex="1" className="bg-blue">flex1</Col>

@@ -11,6 +11,7 @@ import FormPage from './container/form.js';
 import ColumnPage from './container/column.js';
 import IconPage from './container/icon.js';
 import TextPage from './container/text.js';
+import UsePage from './container/use.js';
 import BadgePage from './container/badge.js';
 import DropdownPage from './container/dropdown.js';
 import OverlayPage from './container/overlay.js';
@@ -42,6 +43,12 @@ class SlideBar extends Component {
     return(
       <div className={`miniui-summary ${this.state.fixed ? 'fixed' : ''}`}>
         <ul>
+          <li className="header">用法</li>
+          <li>
+            <ul>
+              <li><Link to="/use"><span>Use</span><span className="comment">安装和使用</span></Link></li>
+            </ul>
+          </li>
           <li className="header">基础</li>
           <li>
             <ul>
@@ -56,7 +63,6 @@ class SlideBar extends Component {
           <li>
             <ul>
               <li><Link to="/column"><span>Grid</span><span className="comment">栅格</span></Link></li>
-              <li><Link to="/"><span>Layout</span><span className="comment">布局</span></Link></li>
             </ul>
           </li>
           <li className="header">功能</li>
@@ -96,7 +102,8 @@ class Main extends Component {
     return(
       <div className="miniui-body">
         <Switch>
-          <Route exact path='/' component={TextPage}/>
+          <Route exact path='/' component={UsePage}/>
+          <Route path='/use' component={UsePage}/>
           <Route path='/text' component={TextPage}/>
           <Route path='/button' component={ButtonPage}/>
           <Route path='/input' component={FormPage}/>
