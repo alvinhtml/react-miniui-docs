@@ -105,6 +105,24 @@ export default class ModalPage extends Component {
     return(
       <div>
         <h1>Modal</h1>
+        <Row>
+          要使用 Modal, 需要先在 root Component 下添加 ActiveModal 组件.
+        </Row>
+          <SyntaxHighlighter {...shlStyle}>{`import {ActiveModal} from 'react-miniui';
+
+
+render(
+  <BrowserRouter>
+    <div className="flex flex-direction-column">
+      <App />
+      <div><ActiveModal /></div>
+    </div>
+  </BrowserRouter>,
+document.getElementById('webApplication'))`}
+          </SyntaxHighlighter>
+          <Row>
+            在需要弹出 Modal 的页面, 导入 Modal 相关的组件
+          </Row>
           <SyntaxHighlighter {...shlStyle}>{`import {
   Button,
   Modal,

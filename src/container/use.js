@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button } from 'react-miniui';
+import { Row, Button } from 'react-miniui';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import shlStyle from '../highlighter.config.js';
 
@@ -12,6 +12,13 @@ export default class UsePage extends Component {
         <SyntaxHighlighter {...shlStyle}>{`npm install react-miniui --save`}
         </SyntaxHighlighter>
         <h2 className="section-head">Usage</h2>
+        <Row>在 <code>.scss</code> 中使用 <code>@import</code> 导入样式文件</Row>
+        <SyntaxHighlighter {...shlStyle}>{`@import "~react-miniui/dist/miniui.css";`}
+        </SyntaxHighlighter>
+        <Row>或者在 <code>.js</code> 中使用 <code>import</code></Row>
+        <SyntaxHighlighter {...shlStyle}>{`import 'react-miniui/dist/miniui.css';`}
+        </SyntaxHighlighter>
+
         <SyntaxHighlighter {...shlStyle}>{`import React, { Component } from 'react';
 import { Button, ButtonGroup } from 'react-miniui';
 
