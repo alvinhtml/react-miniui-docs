@@ -6,6 +6,49 @@ import shlStyle from '../highlighter.config.js';
 export default class IconPage extends Component {
   render() {
 
+    const elloIcon = [
+      'fa-down-dir',
+      'fa-heart',
+      'fa-search',
+      'fa-cancel-circled',
+      'fa-help-circled',
+      'fa-info-circled',
+      'fa-minus-circled',
+      'fa-home',
+      'fa-star',
+      'fa-star-empty',
+      'fa-cancel',
+      'fa-up-dir-2',
+      'fa-left-dir-2',
+      'fa-right-dir-2',
+      'fa-plus-circled',
+      'fa-calendar',
+      'fa-bell',
+      'fa-attention',
+      'fa-attention-circled',
+      'fa-trash-empty',
+      'fa-fast-fw',
+      'fa-fast-bw',
+      'fa-floppy',
+      'fa-sort',
+      'fa-sort-down',
+      'fa-sort-up',
+      'fa-bell-alt',
+      'fa-angle-double-left',
+      'fa-angle-double-right',
+      'fa-angle-double-up',
+      'fa-angle-double-down',
+      'fa-angle-left',
+      'fa-angle-right',
+      'fa-angle-up',
+      'fa-angle-down',
+      'fa-star-half-alt',
+      'fa-pencil-squared',
+      'fa-doc-text-inv',
+      'fa-share-squared',
+      'fa-trash'
+    ];
+
     return(
       <div>
         <h1>SIMPLE LINE ICONS</h1>
@@ -200,6 +243,10 @@ export default class IconPage extends Component {
           <div className="demo-icon"><Icon icon="icon-social-stumbleupon icons" /><span>social-stumbleupon</span></div>
           <div className="demo-icon"><Icon icon="icon-social-youtube icons" /><span>social-youtube</span></div>
           <div className="demo-icon"><Icon icon="icon-social-dropbox icons" /><span>social-dropbox</span></div>
+        </div>
+
+        <div className="flex flex-wrap">
+          {elloIcon.map((v, i) => <div key={i} className="demo-icon"><Icon icon={`${v} icons`} /><span>{v}</span></div>)}
         </div>
       </div>
     )

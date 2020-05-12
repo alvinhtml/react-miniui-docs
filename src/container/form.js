@@ -23,7 +23,7 @@ export default class ButtonPage extends Component {
   render() {
 
     const size = [
-      'mini',
+      'tiny',
       'small',
       'medium',
       'large',
@@ -59,9 +59,9 @@ export default class ButtonPage extends Component {
         </SyntaxHighlighter>
         <h2>Size</h2>
         <Row>
-          {size.map((v, i) => <Input key={v} type="text" placeholder={v} size={v} />)}
+          {size.map((v, i) => <Col span="2"><Input block="true" key={v} type="text" placeholder={v} size={v} /></Col>)}
         </Row>
-        <SyntaxHighlighter {...shlStyle}>{`// 'mini', 'small', 'medium', 'large', 'big'
+        <SyntaxHighlighter {...shlStyle}>{`// 'tiny', 'small', 'medium', 'large', 'big'
 
 <Input type="text" size="small" />`}
         </SyntaxHighlighter>
@@ -75,9 +75,9 @@ export default class ButtonPage extends Component {
         <Row>
           <Col span="6">
             <FormGroup>
-              <Button color="grey">http://</Button>
+              <Button>{`http://`}</Button>
               <Input type="text" />
-              <Select>
+              <Select color="green">
                 <Option value=".com">.com</Option>
     						<Option value=".org">.org</Option>
     						<Option value=".net">.net</Option>
@@ -87,7 +87,7 @@ export default class ButtonPage extends Component {
           <Col span="6">
             <FormGroup>
               <Input type="text" />
-              <Button color="blue">Search</Button>
+              <Button color="gray">Search</Button>
             </FormGroup>
           </Col>
         </Row>

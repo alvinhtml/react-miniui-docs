@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Button, ButtonGroup } from 'react-miniui';
+// import { Button, ButtonGroup } from '../../../react-miniui/dist/index.js';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import shlStyle from '../highlighter.config.js';
 
@@ -20,6 +21,7 @@ export default class ButtonPage extends Component {
     ]
     const size = [
       'mini',
+      'tiny',
       'small',
       'medium',
       'large',
@@ -38,6 +40,10 @@ export default class ButtonPage extends Component {
     return(
       <div>
         <h1>Button</h1>
+        <div>
+          <Button type="basic"><i className="icon-cloud-download"></i> download</Button>
+          <Button type="basic" size="small"><i className="icon-cloud-download"></i> 下载</Button>
+        </div>
         <h3>Import Button Component</h3>
           <SyntaxHighlighter {...shlStyle}>
 {
@@ -68,7 +74,7 @@ import { Button, ButtonGroup } from 'react-miniui';`
         <div className="row">
           {size.map((v, i) => <Button key={v} size={v} color={colors[i]}>{v}</Button>)}
         </div>
-        <SyntaxHighlighter {...shlStyle}>{`['mini','small','medium','large','big'].map(v => (
+        <SyntaxHighlighter {...shlStyle}>{`['mini', 'tiny','small','medium','large','big'].map(v => (
   <Button size={v} key={v} color="red">{v}</Button>
 ))`}
         </SyntaxHighlighter>
