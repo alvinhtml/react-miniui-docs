@@ -56,15 +56,6 @@ module.exports = {
                 ]
             },
             {
-                test: /\.less$/,
-                use: [
-                    MiniCssExtractPlugin.loader,
-                    'css-loader',
-                    'postcss-loader',
-                    'less-loader'
-                ]
-            },
-            {
                 test: /\.(scss|sass)$/,
                 use: [
                     MiniCssExtractPlugin.loader,

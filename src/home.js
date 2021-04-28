@@ -4,7 +4,6 @@ import {BrowserRouter, Switch, Route, Link} from 'react-router-dom';
 
 import {ActiveModal} from 'react-miniui';
 import 'react-miniui/dist/miniui.css';
-// import '../../react-miniui/dist/miniui.css';
 
 import './scss/page.scss';
 
