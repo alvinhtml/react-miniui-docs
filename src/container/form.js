@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Row, Col, Input, Textarea, Icon, FormGroup, Button, Select, Option} from 'react-miniui';
+import { Row, Col, Input, Textarea, Icon, FormGroup, Button, Select, Option, Dropdown, Menu, Item} from 'react-miniui';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import shlStyle from '../highlighter.config.js';
 
