@@ -9,11 +9,12 @@ import {
   Popovers,
   Tooltip,
   Button,
+  ButtonGroup,
   Input,
   Icon,
   openSheet
-} from '../../../react-miniui/dist/index.js';
-// } from 'react-miniui';
+} from 'react-miniui';
+// } from '../../../react-miniui/dist/index.js'; // test
 
 class SheetExample extends Component {
   render() {
@@ -64,12 +65,9 @@ export default class SheetPage extends Component {
 
     return(
       <div>
-        <Row>
-          <Button onClick={() => openSheet('弹出面板示例', <SheetExample />)}>Show Sheet</Button>
-        </Row>
         <h1>Sheet</h1>
         <Row>
-          要使用 Modal, 需要先在 root Component 下添加 &lt;Miniui /&gt; 组件.
+          要使用 Sheet, 需要先在 root Component 下添加 &lt;Miniui /&gt; 组件.
         </Row>
           <SyntaxHighlighter {...shlStyle}>{`import {Miniui} from 'react-miniui';
 
@@ -78,13 +76,13 @@ render(
   <BrowserRouter>
     <div className="flex flex-direction-column">
       <App />
-      <div><Miniui /></div>
+      <Miniui />
     </div>
   </BrowserRouter>,
 document.getElementById('webApplication'))`}
           </SyntaxHighlighter>
           <Row>
-            在需要弹出 Modal 的页面, 导入 Modal 相关的组件
+            在需要弹出 Sheet 的页面, 导入 openSheet, closeSheet 方法
           </Row>
           <SyntaxHighlighter {...shlStyle}>{`import {
   Button,
@@ -92,11 +90,55 @@ document.getElementById('webApplication'))`}
   closeSheet
 } from 'react-miniui';`}
           </SyntaxHighlighter>
-        <h3>Sheet position</h3>
-
+        <h3>Sheet direction</h3>
+        <Row>
+          <div>
+            <Button onClick={() => openSheet('弹出面板示例', <SheetExample />, {direction: 'rtl'})}>从右往左</Button>
+            <Button onClick={() => openSheet('弹出面板示例', <SheetExample />, {direction: 'ltr'})}>从左往右</Button>
+            <Button onClick={() => openSheet('弹出面板示例', <SheetExample />, {direction: 'btt'})}>从下往上</Button>
+            <Button onClick={() => openSheet('弹出面板示例', <SheetExample />, {direction: 'ttb'})}>从上往下</Button>
+          </div>
+        </Row>
+        <SyntaxHighlighter {...shlStyle}>{`<Button onClick={() => openSheet('弹出面板示例', <SheetExample />, {direction: 'rtl'})}>从右往左</Button>
+<Button onClick={() => openSheet('弹出面板示例', <SheetExample />, {direction: 'ltr'})}>从左往右</Button>
+<Button onClick={() => openSheet('弹出面板示例', <SheetExample />, {direction: 'btt'})}>从下往上</Button>
+<Button onClick={() => openSheet('弹出面板示例', <SheetExample />, {direction: 'ttb'})}>从上往下</Button>`}
+        </SyntaxHighlighter>
         <h3>Modal Size</h3>
         <Row>
-          <Button onClick={() => openSheet('弹出面板示例', <SheetExample />)}>Show Big Modal</Button>
+          <Button onClick={() => openSheet('弹出面板示例', <SheetExample />, {size: 'large'})}>Show Big Modal</Button>
+          <Button onClick={() => openSheet('弹出面板示例', <SheetExample />, {size: 'medium'})}>Show Medium Modal</Button>
+          <Button onClick={() => openSheet('弹出面板示例', <SheetExample />, {size: 'small'})}>Show Small Modal</Button>
+        </Row>
+        <SyntaxHighlighter {...shlStyle}>{`<Button onClick={() => openSheet('弹出面板示例', <SheetExample />, {size: 'large'})}>Show Big Modal</Button>
+<Button onClick={() => openSheet('弹出面板示例', <SheetExample />, {size: 'medium'})}>Show Medium Modal</Button>
+<Button onClick={() => openSheet('弹出面板示例', <SheetExample />, {size: 'small'})}>Show Small Modal</Button>`}
+        </SyntaxHighlighter>
+        <h3>Attributes</h3>
+        <Row>
+          <table className="table-block">
+            <tr>
+              <th>参数</th>
+              <th>说明</th>
+              <th>类型</th>
+              <th>可选值</th>
+              <th>默认值</th>
+            </tr>
+            <tr>
+              <td>direction</td>
+              <td>弹出方向</td>
+              <td>string</td>
+              <td>rtl | ltr | btt | ttb</td>
+              <td>rtl</td>
+            </tr>
+            <tr>
+              <td>size</td>
+              <td>大小</td>
+              <td>string</td>
+              <td>large | medium | small</td>
+              <td>medium</td>
+            </tr>
+          </table>
         </Row>
       </div>
     )

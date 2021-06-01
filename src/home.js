@@ -5,9 +5,9 @@ import {BrowserRouter, Switch, Route, Link} from 'react-router-dom';
 // import {ActiveModal} from 'react-miniui';
 import {
   Miniui
-} from '../../react-miniui/dist/index.js';
-// import 'react-miniui/dist/miniui.css';
-import '../../react-miniui/dist/miniui.css';
+} from 'react-miniui';
+import 'react-miniui/dist/miniui.css';
+// import '../../react-miniui/dist/miniui.css';
 
 import './scss/page.scss';
 
@@ -56,7 +56,7 @@ class SlideBar extends Component {
 
   render() {
     return(
-      <div className={`miniui-summary ${this.state.fixed ? 'fixed' : ''}`} style={{ visibility: 'hidden' }}>
+      <div className={`miniui-summary ${this.state.fixed ? 'fixed' : ''}`}>
         <ul>
           <li className="header">用法</li>
           <li>
