@@ -22,6 +22,7 @@ import DropdownPage from './container/dropdown.js';
 import OverlayPage from './container/overlay.js';
 import ModalPage from './container/modal.js';
 import SheetPage from './container/sheet.js';
+import TabsPage from './container/tabs.js';
 
 class Header extends Component {
   render() {
@@ -83,6 +84,7 @@ class SlideBar extends Component {
           <li className="header">功能</li>
           <li>
             <ul>
+              <li><Link to="/tabs"><span>Tabs</span><span className="comment">选项卡</span></Link></li>
               <li><Link to="/dropdown"><span>Dropdown</span><span className="comment">下载菜单</span></Link></li>
               <li><Link to="/overlay"><span>Overlay</span><span className="comment">弹出浮层</span></Link></li>
               <li><Link to="/modal"><span>Modal</span><span className="comment">弹出窗口</span></Link></li>
@@ -130,6 +132,7 @@ class Main extends Component {
           <Route path='/overlay' component={OverlayPage}/>
           <Route path='/modal' component={ModalPage}/>
           <Route path='/sheet' component={SheetPage}/>
+          <Route path='/tabs' component={TabsPage}/>
         </Switch>
       </div>
     )
@@ -154,8 +157,7 @@ class App extends Component {
 render(
   <BrowserRouter>
     <div className="flex flex-direction-column">
-{//      <Header />
-}
+      <Header />
       <App />
       <Miniui />
     </div>
