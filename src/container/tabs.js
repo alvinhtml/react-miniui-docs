@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-// import { Row, Col, Tabs, Tab } from 'react-miniui';
-import { Row, Col, Tabs, Tab } from '../../../react-miniui/dist/index.js'; // test;
+import { Row, Col, Tabs, Tab } from 'react-miniui';
+// import { Row, Col, Tabs, Tab } from '../../../react-miniui/dist/index.js'; // test;
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import shlStyle from '../highlighter.config.js';
 
