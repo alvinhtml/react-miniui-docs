@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-user=root
+user=ec2-user
 host=$1
 port=$2
 
