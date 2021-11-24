@@ -1,15 +1,19 @@
 import React, { Component } from 'react';
 import { Row, Col, OverlayTrigger, Popovers, Tooltip,  Button } from 'react-miniui';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import shlStyle from '../highlighter.config.js';
 
 export default class OverlayPage extends Component {
+  componentDidMount() {
+    if (window.hljs) {
+      window.hljs.highlightAll()
+    }
+  }
+  
   render() {
     return(
-      <div>
+      <div className="markdown-section">
         <h1>Overlay</h1>
-          <SyntaxHighlighter {...shlStyle}>{`import {Row, Col, OverlayTrigger, Popovers, Tooltip,  Button} from 'react-miniui';`}
-          </SyntaxHighlighter>
+          <pre><code className="language-javascript">{`import {Row, Col, OverlayTrigger, Popovers, Tooltip,  Button} from 'react-miniui';`}
+          </code></pre>
         <h3>Overlay position</h3>
         <Row>
           {['left', 'top', 'right', 'bottom'].map(v => (
@@ -23,7 +27,7 @@ export default class OverlayPage extends Component {
             </Col>
           ))}
         </Row>
-        <SyntaxHighlighter {...shlStyle}>{`<Row>
+        <pre><code className="language-javascript">{`<Row>
   {['left', 'top', 'right', 'bottom'].map(v => (
     <Col key={v} span='2'>
       <OverlayTrigger
@@ -35,7 +39,7 @@ export default class OverlayPage extends Component {
     </Col>
   ))}
 </Row>`}
-        </SyntaxHighlighter>
+        </code></pre>
         <h3>Overlay colors</h3>
         <Row>
           {['dark', 'white', 'red', 'yellow'].map(v => (
@@ -48,7 +52,7 @@ export default class OverlayPage extends Component {
             </Col>
           ))}
         </Row>
-        <SyntaxHighlighter {...shlStyle}>{`<Row>
+        <pre><code className="language-javascript">{`<Row>
   {['dark', 'white', 'red', 'yellow'].map(v => (
     <Col key={v} span='2'>
       <OverlayTrigger
@@ -59,7 +63,7 @@ export default class OverlayPage extends Component {
     </Col>
   ))}
 </Row>`}
-        </SyntaxHighlighter>
+        </code></pre>
         <h3>Overlay title</h3>
         <Row>
           {['dark', 'white', 'red', 'yellow'].map(v => (
@@ -80,7 +84,7 @@ export default class OverlayPage extends Component {
             </Col>
           ))}
         </Row>
-        <SyntaxHighlighter {...shlStyle}>{`<Row>
+        <pre><code className="language-javascript">{`<Row>
   {['dark', 'white', 'red', 'yellow'].map(v => (
     <Col key={v} span='2'>
       <OverlayTrigger
@@ -99,7 +103,7 @@ export default class OverlayPage extends Component {
     </Col>
   ))}
 </Row>`}
-        </SyntaxHighlighter>
+        </code></pre>
         <h3>Overlay trigger 'hover' & 'click'</h3>
         <Row>
           {['hover', 'click'].map(v => (
@@ -117,7 +121,7 @@ export default class OverlayPage extends Component {
             </Col>
           ))}
         </Row>
-        <SyntaxHighlighter {...shlStyle}>{`<Row>
+        <pre><code className="language-javascript">{`<Row>
   {['hover', 'click'].map(v => (
     <Col key={v} span='2'>
       <OverlayTrigger
@@ -133,7 +137,7 @@ export default class OverlayPage extends Component {
     </Col>
   ))}
 </Row>`}
-        </SyntaxHighlighter>
+        </code></pre>
       </div>
     )
   }

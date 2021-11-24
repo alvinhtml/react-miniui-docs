@@ -1,25 +1,29 @@
 import React, { Component } from 'react';
 import { Row, Button } from 'react-miniui';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import shlStyle from '../highlighter.config.js';
 
 export default class UsePage extends Component {
+  componentDidMount() {
+    if (window.hljs) {
+      window.hljs.highlightAll()
+    }
+  }
+
   render() {
     return(
-      <div>
+      <div className="markdown-section">
         <h1>react-miniui</h1>
         <h2 className="section-head">Installation</h2>
-        <SyntaxHighlighter {...shlStyle}>{`npm install react-miniui --save`}
-        </SyntaxHighlighter>
+        <pre><code className="language-javascript">{`npm install react-miniui --save`}
+        </code></pre>
         <h2 className="section-head">Usage</h2>
-        <Row>在 <code>.scss</code> 中使用 <code>@import</code> 导入样式文件</Row>
-        <SyntaxHighlighter {...shlStyle}>{`@import "~react-miniui/dist/miniui.css";`}
-        </SyntaxHighlighter>
-        <Row>或者在 <code>.js</code> 中使用 <code>import</code></Row>
-        <SyntaxHighlighter {...shlStyle}>{`import 'react-miniui/dist/miniui.css';`}
-        </SyntaxHighlighter>
+        <p>在 <code>.scss</code> 中使用 <code>@import</code> 导入样式文件</p>
+        <pre><code className="language-javascript">{`@import "~react-miniui/dist/miniui.css";`}
+        </code></pre>
+        <p>或者在 <code>.js</code> 中使用 <code>import</code></p>
+        <pre><code className="language-javascript">{`import 'react-miniui/dist/miniui.css';`}
+        </code></pre>
 
-        <SyntaxHighlighter {...shlStyle}>{`import React, { Component } from 'react';
+        <pre><code className="language-javascript">{`import React, { Component } from 'react';
 import { Button, ButtonGroup } from 'react-miniui';
 
 export default class ButtonPage extends Component {
@@ -40,7 +44,7 @@ export default class ButtonPage extends Component {
     )
   }
 }`}
-        </SyntaxHighlighter>
+        </code></pre>
         </div>
     )
   }

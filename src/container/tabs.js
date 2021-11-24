@@ -1,17 +1,21 @@
 import React, { Component } from 'react';
 import { Row, Col, Tabs, Tab } from 'react-miniui';
 // import { Row, Col, Tabs, Tab } from '../../../react-miniui/dist/index.js'; // test;
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import shlStyle from '../highlighter.config.js';
 
 export default class columnPage extends Component {
+  componentDidMount() {
+    if (window.hljs) {
+      window.hljs.highlightAll()
+    }
+  }
+  
   render() {
 
     return(
-      <div>
+      <div className="markdown-section">
         <h1 className="section-head">Use Tabs</h1>
-        <SyntaxHighlighter {...shlStyle}>{`import { Tab, Tabs } from 'react-miniui';`}
-        </SyntaxHighlighter>
+        <pre><code className="language-javascript">{`import { Tab, Tabs } from 'react-miniui';`}
+        </code></pre>
         <h2>Tabs</h2>
         <Row className="demo-row">
           <Col span="12">
@@ -23,12 +27,12 @@ export default class columnPage extends Component {
           </Col>
         </Row>
 
-      <SyntaxHighlighter {...shlStyle}>{`<Tabs defaultActiveKey={2}>
+      <pre><code className="language-javascript">{`<Tabs defaultActiveKey={2}>
   <Tab eventKey={1} title="Tab 1">Tab Body 1</Tab>
   <Tab eventKey={2} title="Tab 2">Tab Body 2</Tab>
   <Tab eventKey={3} title="Tab 3">Tab Body 3</Tab>
 </Tabs>`}
-        </SyntaxHighlighter>
+        </code></pre>
         <h3>Attributes</h3>
         <h4>Tabs</h4>
         <Row>

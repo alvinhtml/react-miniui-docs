@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import shlStyle from '../highlighter.config.js';
 
 import {
   Row,
@@ -34,6 +32,7 @@ class ModalExample extends Component {
 }
 
 class ModalExampleBig extends Component {
+
   render() {
     return (
       <Modal>
@@ -98,17 +97,23 @@ export default class ModalPage extends Component {
     )
   }
 
+  componentDidMount() {
+    if (window.hljs) {
+      window.hljs.highlightAll()
+    }
+  }
+
   render() {
 
     // console.log("Modal", Modal);
 
     return(
-      <div>
+      <div className="markdown-section">
         <h1>Modal</h1>
         <Row>
           要使用 Modal, 需要先在 root Component 下添加 &lt;Miniui /&gt; 组件.
         </Row>
-          <SyntaxHighlighter {...shlStyle}>{`import {Miniui} from 'react-miniui';
+          <pre><code className="language-javascript">{`import {Miniui} from 'react-miniui';
 
 
 render(
@@ -119,11 +124,11 @@ render(
     </div>
   </BrowserRouter>,
 document.getElementById('webApplication'))`}
-          </SyntaxHighlighter>
+          </code></pre>
           <Row>
             在需要弹出 Modal 的页面, 导入 Modal 相关的组件
           </Row>
-          <SyntaxHighlighter {...shlStyle}>{`import {
+          <pre><code className="language-javascript">{`import {
   Button,
   Modal,
   Alert,
@@ -131,12 +136,12 @@ document.getElementById('webApplication'))`}
   showModal,
   closeModal
 } from 'react-miniui';`}
-          </SyntaxHighlighter>
+          </code></pre>
         <h3>Modal position</h3>
         <Row>
           <Button color="red" onClick={() => showModal(<ModalExample />)}>Show Modal</Button>
         </Row>
-        <SyntaxHighlighter {...shlStyle}>{`class ModalExample extends Component {
+        <pre><code className="language-javascript">{`class ModalExample extends Component {
   render() {
     return (
       <Modal>
@@ -160,7 +165,7 @@ class ShowModal extends Component {
     );
   }
 }`}
-        </SyntaxHighlighter>
+        </code></pre>
         <h3>Modal Size</h3>
         <Row>
           <Button color="teal" onClick={() => showModal(<ModalExampleBig />)}>Show Big Modal</Button>
@@ -170,7 +175,7 @@ class ShowModal extends Component {
           <Button color="blue" onClick={this.alertModal.bind(this)}>Alert Modal</Button>
           <Button color="red" onClick={this.confirmModal.bind(this)}>Confirm Modal</Button>
         </Row>
-        <SyntaxHighlighter {...shlStyle}>{`class ShowModal extends Component {
+        <pre><code className="language-javascript">{`class ShowModal extends Component {
   alertModal() {
     Alert('弹出一个消息对话框!')
   }
@@ -193,7 +198,7 @@ class ShowModal extends Component {
     );
   }
 }`}
-        </SyntaxHighlighter>
+        </code></pre>
       </div>
     )
   }

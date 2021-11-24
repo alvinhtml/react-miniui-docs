@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import {Row, Col, Icon, Button, Dropdown, Menu, Item, Select, Option, Badge} from 'react-miniui';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import shlStyle from '../highlighter.config.js';
 
 export default class DropdownPage extends Component {
+	componentDidMount() {
+    if (window.hljs) {
+      window.hljs.highlightAll()
+    }
+  }
+  
 
 	handleChange(val, text) {
 		console.log("val:", val);
@@ -12,10 +16,10 @@ export default class DropdownPage extends Component {
 
 	render() {
 		return (
-			<div>
+			<div className="markdown-section">
         <h1>Dropdown</h1>
-					<SyntaxHighlighter {...shlStyle}>{`import {Row, Col, Icon, Button, Dropdown, Menu, Item, Select, Option, Badge} from 'react-miniui';`}
-					</SyntaxHighlighter>
+					<pre><code className="language-javascript">{`import {Row, Col, Icon, Button, Dropdown, Menu, Item, Select, Option, Badge} from 'react-miniui';`}
+					</code></pre>
         <h2>Dropdown Menu</h2>
         <Row>
 					<Col span="4">
@@ -47,7 +51,7 @@ export default class DropdownPage extends Component {
 						</Dropdown>
 					</Col>
 				</Row>
-				<SyntaxHighlighter {...shlStyle}>{`<Dropdown name="phone" value="iphone" onChange={this.handleChange.bind(this)}>
+				<pre><code className="language-javascript">{`<Dropdown name="phone" value="iphone" onChange={this.handleChange.bind(this)}>
   file <Icon icon="fa-down-dir" />
   <Menu>
     <div className="item" href="#" value="1">New</div>
@@ -73,7 +77,7 @@ export default class DropdownPage extends Component {
     <div className="item">E-mail Collaborators </div>
   </Menu>
 </Dropdown>`}
-				</SyntaxHighlighter>
+				</code></pre>
 				<h2>Dropdown Button</h2>
 				<Row>
 					<Col span="2">
@@ -110,7 +114,7 @@ export default class DropdownPage extends Component {
 						</Dropdown>
 					</Col>
 				</Row>
-				<SyntaxHighlighter {...shlStyle}>{`<Row>
+				<pre><code className="language-javascript">{`<Row>
 	<Col span="2">
 		<Dropdown name="phone" value="iphone" onChange={this.handleChange.bind(this)}>
 			<Button color="blue">请选择 <Icon icon="fa-down-dir" /></Button>
@@ -145,7 +149,7 @@ export default class DropdownPage extends Component {
 		</Dropdown>
 	</Col>
 </Row>`}
-				</SyntaxHighlighter>
+				</code></pre>
 				<h2>Dropdown Select</h2>
         <Row>
 					<Col span="2">
@@ -166,7 +170,7 @@ export default class DropdownPage extends Component {
 						</Select>
 					</Col>
 				</Row>
-				<SyntaxHighlighter {...shlStyle}>{`<Row>
+				<pre><code className="language-javascript">{`<Row>
 	<Col span="2">
 		<Select name="phone" value="iphone" onChange={this.handleChange.bind(this)}>
 			<Option value="iphone">iphone</Option>
@@ -185,7 +189,7 @@ export default class DropdownPage extends Component {
 		</Select>
 	</Col>
 </Row>`}
-				</SyntaxHighlighter>
+				</code></pre>
 				<Row style={{height: "600px"}} />
       </div>
 		)

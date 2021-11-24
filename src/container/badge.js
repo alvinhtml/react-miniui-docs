@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
 import { Badge, Button } from 'react-miniui';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import shlStyle from '../highlighter.config.js';
 
 export default class BadgePage extends Component {
+  componentDidMount() {
+    if (window.hljs) {
+      window.hljs.highlightAll()
+    }
+  }
+
   render() {
     return(
-      <div>
+      <div className="markdown-section">
         <h1>Badge</h1>
         <h2 className="section-head">大小</h2>
         <h1>标题 H1.h1 2.5714em 36px <Badge color="red" >New</Badge></h1>
@@ -15,25 +19,25 @@ export default class BadgePage extends Component {
         <h4>标题 H4.h4 1.2857em 18px <Badge color="red" >New</Badge></h4>
         <h5>标题 H5.h5 1.0000em 14px <Badge color="red" >New</Badge></h5>
         <h6>标题 H6.h6 0.8571em 12px <Badge color="red" >New</Badge></h6>
-        <SyntaxHighlighter {...shlStyle}>{`import { Badge, Button } from 'react-miniui';
-          
+        <pre><code className="language-javascript">{`import { Badge, Button } from 'react-miniui';
+
 <Badge color="red" >New</Badge>`}
-        </SyntaxHighlighter>
+        </code></pre>
         <h2 className="section-head">with Button</h2>
-        <div className="row spaced">
+        <p>
           <Button color="red">
             Profile <Badge color="white">1</Badge>
           </Button>
           <Button color="blue">
             Profile <Badge color="red">17</Badge>
           </Button>
-        </div>
-        <SyntaxHighlighter {...shlStyle}>{`import { Badge, Button } from 'react-miniui';
+        </p>
+        <pre><code className="language-javascript">{`import { Badge, Button } from 'react-miniui';
 
 <Button color="blue">
   Profile <Badge color="red">17</Badge>
 </Button>`}
-        </SyntaxHighlighter>
+        </code></pre>
       </div>
     )
   }

@@ -5,9 +5,8 @@ import { Button } from 'react-miniui';
 export default class TextPage extends Component {
   render() {
     return(
-      <div>
-        <h1>文本内容</h1>
-        <h2 className="section-head">标题</h2>
+      <div className="markdown-section">
+        <h1>标题 h1 ~ h6</h1>
         <h1>标题 H1.h1 2.5714em 36px</h1>
         <h2>标题 H2.h2 2.1428em 30px</h2>
         <h3>标题 H3.h3 1.7142em 24px</h3>
@@ -42,7 +41,8 @@ export default class TextPage extends Component {
         <p>使用<code>&lt;del&gt;</code><del>定义带有删除线的文本。</del></p>
         <p>使用<code>&lt;abbr&gt;</code><abbr>定义缩写文本。</abbr></p>
         <p>使用<code>&lt;q&gt;</code>定义<q>引用</q>的文本。</p>
-        <p>使用<code>&lt;code&gt;</code>定义代码文本。<code name="code" className="js">alert('hello world!');</code></p>
+        <p>使用<code>&lt;code&gt;</code>定义代码文本。<code>alert('hello world!');</code></p>
+
       </div>
     )
   }

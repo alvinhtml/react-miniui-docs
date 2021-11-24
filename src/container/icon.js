@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import { Icon } from 'react-miniui';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import shlStyle from '../highlighter.config.js';
 
 export default class IconPage extends Component {
+  componentDidMount() {
+    if (window.hljs) {
+      window.hljs.highlightAll()
+    }
+  }
+  
   render() {
 
     const elloIcon = [
@@ -50,12 +54,12 @@ export default class IconPage extends Component {
     ];
 
     return(
-      <div>
+      <div className="markdown-section">
         <h1>SIMPLE LINE ICONS</h1>
-          <SyntaxHighlighter {...shlStyle}>{`import { Icon } from 'react-miniui';
+          <pre><code className="language-javascript">{`import { Icon } from 'react-miniui';
 
 <Icon icon="icon-user" />`}
-          </SyntaxHighlighter>
+          </code></pre>
         <div className="flex flex-wrap">
           <div className="demo-icon"><Icon icon="icon-user icons" /><span>user</span></div>
           <div className="demo-icon"><Icon icon="icon-people icons" /><span>people</span></div>

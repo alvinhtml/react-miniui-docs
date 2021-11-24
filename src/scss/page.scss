@@ -12,7 +12,9 @@ header.header {
   box-shadow: 0 2px 8px #f0f1f2;
 
 	.logo {
+		text-align: left;
     padding: 16px 36px;
+		margin: 0;
 		flex: 1;
     font-family: 'optima';
 	}
@@ -45,8 +47,10 @@ main.main {
   overflow-y: auto;
   & > ul {
     border-right: 1px solid #e8e8e8;
+		list-style: none;
     ul {
       padding-left: 20px;
+			list-style: none;
     }
     li {
       &.header {
