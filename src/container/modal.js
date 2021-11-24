@@ -111,7 +111,7 @@ export default class ModalPage extends Component {
       <div className="markdown-section">
         <h1>Modal</h1>
         <Row>
-          要使用 Modal, 需要先在 root Component 下添加 &lt;Miniui /&gt; 组件.
+          要使用 Modal, 需要先在 root Component 下添加 <code>&lt;Miniui /&gt;</code> 组件.
         </Row>
           <pre><code className="language-javascript">{`import {Miniui} from 'react-miniui';
 

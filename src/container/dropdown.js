@@ -7,7 +7,7 @@ export default class DropdownPage extends Component {
       window.hljs.highlightAll()
     }
   }
-  
+
 
 	handleChange(val, text) {
 		console.log("val:", val);
@@ -115,39 +115,39 @@ export default class DropdownPage extends Component {
 					</Col>
 				</Row>
 				<pre><code className="language-javascript">{`<Row>
-	<Col span="2">
-		<Dropdown name="phone" value="iphone" onChange={this.handleChange.bind(this)}>
-			<Button color="blue">请选择 <Icon icon="fa-down-dir" /></Button>
-			<Menu>
-				<Item value="iphone">iphone</Item>
-				<Item value="ipad">ipad</Item>
-				<Item value="Macbook Pro">Macbook Pro</Item>
-				<Item value="windows phone">windows phone</Item>
-			</Menu>
-		</Dropdown>
-	</Col>
-	<Col span="2">
-		<Dropdown name="phone" value="iphone" onChange={this.handleChange.bind(this)}>
-			<Button color="red">请选择 <Icon icon="fa-down-dir" /></Button>
-			<Menu>
-				<Item href="http://www.apple.com" target="_blank" value="iphone">iphone</Item>
-				<Item href="#" value="ipad">ipad</Item>
-				<Item href="#" value="Macbook Pro">Macbook Pro</Item>
-				<Item href="#" value="windows phone">windows phone</Item>
-			</Menu>
-		</Dropdown>
-	</Col>
-	<Col span="2">
-		<Dropdown name="phone" value="iphone" onChange={this.handleChange.bind(this)}>
-			<Button color="green">请选择 <Icon icon="fa-down-dir" /></Button>
-			<Menu dropArrow={true}>
-				<Item value="iphone">iphone</Item>
-				<Item value="ipad">ipad</Item>
-				<Item value="Macbook Pro">Macbook Pro</Item>
-				<Item value="windows phone">windows phone</Item>
-			</Menu>
-		</Dropdown>
-	</Col>
+<Col span="2">
+  <Dropdown name="phone" value="iphone" onChange={this.handleChange.bind(this)}>
+    <Button color="blue">请选择 <Icon icon="fa-down-dir" /></Button>
+    <Menu>
+      <Item value="iphone">iphone</Item>
+      <Item value="ipad">ipad</Item>
+      <Item value="Macbook Pro">Macbook Pro</Item>
+      <Item value="windows phone">windows phone</Item>
+    </Menu>
+  </Dropdown>
+</Col>
+<Col span="2">
+  <Dropdown name="phone" value="iphone" onChange={this.handleChange.bind(this)}>
+    <Button color="red">请选择 <Icon icon="fa-down-dir" /></Button>
+    <Menu>
+      <Item href="http://www.apple.com" target="_blank" value="iphone">iphone</Item>
+      <Item href="#" value="ipad">ipad</Item>
+      <Item href="#" value="Macbook Pro">Macbook Pro</Item>
+      <Item href="#" value="windows phone">windows phone</Item>
+    </Menu>
+  </Dropdown>
+</Col>
+<Col span="2">
+  <Dropdown name="phone" value="iphone" onChange={this.handleChange.bind(this)}>
+    <Button color="green">请选择 <Icon icon="fa-down-dir" /></Button>
+    <Menu dropArrow={true}>
+      <Item value="iphone">iphone</Item>
+      <Item value="ipad">ipad</Item>
+      <Item value="Macbook Pro">Macbook Pro</Item>
+      <Item value="windows phone">windows phone</Item>
+    </Menu>
+  </Dropdown>
+</Col>
 </Row>`}
 				</code></pre>
 				<h2>Dropdown Select</h2>
@@ -171,26 +171,27 @@ export default class DropdownPage extends Component {
 					</Col>
 				</Row>
 				<pre><code className="language-javascript">{`<Row>
-	<Col span="2">
-		<Select name="phone" value="iphone" onChange={this.handleChange.bind(this)}>
-			<Option value="iphone">iphone</Option>
-			<Option value="ipad">ipad</Option>
-			<Option value="Macbook Pro">Macbook Pro</Option>
-			<Option value="windows phone">windows phone</Option>
-		</Select>
-	</Col>
+  <Col span="2">
+    <Select name="phone" value="iphone" onChange={this.handleChange.bind(this)}>
+      <Option value="iphone">iphone</Option>
+      <Option value="ipad">ipad</Option>
+      <Option value="Macbook Pro">Macbook Pro</Option>
+      <Option value="windows phone">windows phone</Option>
+    </Select>
+  </Col>
 
-	<Col span="2">
-		<Select name="phone" value="Macbook Pro" search={true} onChange={this.handleChange.bind(this)}>
-			<Option value="iphone">iphone</Option>
-			<Option value="ipad">ipad</Option>
-			<Option value="Macbook Pro">Macbook Pro</Option>
-			<Option value="windows phone">windows phone<span>55</span></Option>
-		</Select>
-	</Col>
+  <Col span="2">
+    <Select name="phone" value="Macbook Pro" search={true} onChange={this.handleChange.bind(this)}>
+      <Option value="iphone">iphone</Option>
+      <Option value="ipad">ipad</Option>
+      <Option value="Macbook Pro">Macbook Pro</Option>
+      <Option value="windows phone">windows phone<span>55</span></Option>
+    </Select>
+  </Col>
 </Row>`}
 				</code></pre>
 				<Row style={{height: "600px"}} />
+
       </div>
 		)
 	}

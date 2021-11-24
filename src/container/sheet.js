@@ -71,9 +71,9 @@ export default class SheetPage extends Component {
       <div>
         <h1>Sheet</h1>
         <Row>
-          要使用 Sheet, 需要先在 root Component 下添加 &lt;Miniui /&gt; 组件.
+          要使用 Sheet, 需要先在 root Component 下添加 <code>&lt;Miniui /&gt;</code> 组件.
         </Row>
-          <pre><code className="language-javascript">{`import {Miniui} from 'react-miniui';
+        <pre><code className="language-javascript">{`import {Miniui} from 'react-miniui';
 
 
 render(
@@ -121,27 +121,31 @@ document.getElementById('webApplication'))`}
         <h3>Attributes</h3>
         <Row>
           <table className="table-block">
-            <tr>
-              <th>参数</th>
-              <th>说明</th>
-              <th>类型</th>
-              <th>可选值</th>
-              <th>默认值</th>
-            </tr>
-            <tr>
-              <td>direction</td>
-              <td>弹出方向</td>
-              <td>string</td>
-              <td>rtl | ltr | btt | ttb</td>
-              <td>rtl</td>
-            </tr>
-            <tr>
-              <td>size</td>
-              <td>大小</td>
-              <td>string</td>
-              <td>large | medium | small</td>
-              <td>medium</td>
-            </tr>
+            <thead>
+              <tr>
+                <th>参数</th>
+                <th>说明</th>
+                <th>类型</th>
+                <th>可选值</th>
+                <th>默认值</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>direction</td>
+                <td>弹出方向</td>
+                <td>string</td>
+                <td>rtl | ltr | btt | ttb</td>
+                <td>rtl</td>
+              </tr>
+              <tr>
+                <td>size</td>
+                <td>大小</td>
+                <td>string</td>
+                <td>large | medium | small</td>
+                <td>medium</td>
+              </tr>
+            </tbody>
           </table>
         </Row>
       </div>

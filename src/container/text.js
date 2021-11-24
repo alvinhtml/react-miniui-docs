@@ -7,12 +7,12 @@ export default class TextPage extends Component {
     return(
       <div className="markdown-section">
         <h1>标题 h1 ~ h6</h1>
-        <h1>标题 H1.h1 2.5714em 36px</h1>
-        <h2>标题 H2.h2 2.1428em 30px</h2>
-        <h3>标题 H3.h3 1.7142em 24px</h3>
-        <h4>标题 H4.h4 1.2857em 18px</h4>
-        <h5>标题 H5.h5 1.0000em 14px</h5>
-        <h6>标题 H6.h6 0.8571em 12px</h6>
+        <h1>标题 H1.h1 2em</h1>
+        <h2>标题 H2.h2 1.75em</h2>
+        <h3>标题 H3.h3 1.5em</h3>
+        <h4>标题 H4.h4 1.25em</h4>
+        <h5>标题 H5.h5 1em</h5>
+        <h6>标题 H6.h6 1em</h6>
         <h2 className="section-head">文本内容</h2>
         <p>不要为明天忧虑，天上的飞鸟，不耕种也不收获，上天尚且要养活它；田野里的百合花，从不忧虑它能不能开花，是不是可以开得和其它一样美，但是它就自然的开花了，开得比所罗门皇冠上的珍珠还美。你呢，忧虑什么呢？人比飞鸟和百合花贵重多了，上帝会弃你不顾吗？</p>
         <ul className="mui">
