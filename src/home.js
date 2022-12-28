@@ -28,8 +28,8 @@ class Header extends Component {
       <header className="mui header flex">
         <div className="flex-control-label">
           <h1 className="logo">
-            <span className="color-red">M</span>
-            <span className="color-green">ini</span>
+            <span className="color-red">Mi</span>
+            <span className="color-green">ni</span>
             <span className="color-teal">UI</span>
           </h1>
         </div>
@@ -211,16 +211,11 @@ class Main extends Component {
 class App extends Component {
   constructor(props) {
     super(props)
-    this.state = 1
-  }
-  handleClcik() {
-    this.state++
   }
   render() {
     return (
       <main className="main flex">
         <div className="flex-control-label">
-          <button onClick={this.handleClcik()}>test {this.state}</button>
           <SlideBar />
         </div>
         <div className="flex-controls">

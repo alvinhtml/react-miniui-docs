@@ -64,6 +64,7 @@ module.exports = {
             loader: 'sass-loader',
             options: {
               includePaths: ['./node_modules/normalize-scss/sass'],
+              implementation: require('dart-sass'),
             },
           },
         ],
